@@ -1,24 +1,22 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
+  def index
+    @users = User.all
+    render json: @users
   end
 
   def create
     @user = User.new(user_params)
-    @user.cart = Cart.new
     if @user.save
-      redirect_to root_url
+      render json: @user, status: 200
     else
-      render :new
+      render json: @user.errors.full_messages, status: 400
     end
   end
 
-
   private
 
-    def user_params
-      params.require(:user).permit(:email, :name, :password, :address)
-    end
-
+  def user_params
+    params.require(:user).permit(:email, :name, :password, :address)
+  end
 end
