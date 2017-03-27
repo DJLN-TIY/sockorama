@@ -39,6 +39,8 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'factory_girl_rails'
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
