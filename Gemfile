@@ -40,7 +40,10 @@ gem 'factory_girl_rails'
 gem 'figaro'
 gem 'kaminari'
 gem 'mini_magick'
+gem 'pg_search'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rails_admin', '1.1.0'
+gem 'ransack'
 gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
