@@ -35,13 +35,15 @@ gem 'pry-rails'
 gem 'sendgrid-ruby'
 gem 'cloudinary'
 gem 'figaro'
-gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'factory_girl_rails'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', :require => 'rack/cors'
 # gem 'faker'
+gem 'ransack'
+gem 'pg_search'
+gem 'rails_admin', '1.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
