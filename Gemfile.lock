@@ -53,7 +53,6 @@ GEM
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
     case_transform (0.2)
-      activesupport
     cloudinary (1.6.0)
       aws_cf_signer
       rest-client
@@ -247,4 +246,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.14.4
+   1.14.6
