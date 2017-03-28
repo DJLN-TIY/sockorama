@@ -34,3 +34,7 @@ CSV.foreach(File.join(Rails.root, "lib", "Copy of Sockorama Inventory"), headers
        )
      end
    end
+
+10.times do
+  user = FactoryGirl.create(:user)
+end
