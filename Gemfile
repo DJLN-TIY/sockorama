@@ -30,18 +30,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+gem 'aasm'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
-gem 'pry-rails'
-gem 'sendgrid-ruby'
+gem 'carrierwave'
 gem 'cloudinary'
+gem 'factory_girl_rails'
+# gem 'faker'
 gem 'figaro'
 gem 'kaminari'
-gem 'carrierwave'
 gem 'mini_magick'
-gem 'factory_girl_rails'
-gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', :require => 'rack/cors'
-# gem 'faker'
+gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +50,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do
