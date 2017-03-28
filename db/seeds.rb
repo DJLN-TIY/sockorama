@@ -34,3 +34,9 @@ CSV.foreach(File.join(Rails.root, "lib", "Copy of Sockorama Inventory"), headers
        )
      end
    end
+
+30.times do
+  user = User.create!(
+    email: { Faker::Internet.safe_email }
+  )
+end
