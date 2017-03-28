@@ -1,17 +1,17 @@
-# README
+GET '/api/products'
+Returns JSON:
+  - id
+  - name
+  - sock_type
+  - color
+  - style
+  - price
+  - image
+  - description
+  - materials
+  - inventories
+    - id
+    - size
+    - quantity
 
-* Ruby version - ruby '2.3.3'
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* 
+GET '/api/products'
