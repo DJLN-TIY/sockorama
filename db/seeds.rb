@@ -11,3 +11,26 @@
 #   {group: "Blended", name: "Painters", color: "Various", style: "Crew", size: "S", quantity: "20", price: "$15", image: "http://ecx.images-amazon.com/images/I/91-M8oHN-TL._UX679_.jpg", material: "Cotton/Polyester/Polyurethane"}
 # ]
 # )
+
+require 'csv'
+
+CSV.foreach(File.join(Rails.root, "lib", "Copy of Sockorama Inventory"), headers: true, header_converters: :symbol)
+   .each do |product|
+     sock = Product.create(
+       name: product[:name],
+       sock_type: product[:type],
+       color: product[:primary_color],
+       style: product[:style],
+       price: product[:price_per_pair].slice!(1..-1),
+       image: product[:images],
+       materials: product[:materials],
+       description: product[:description]
+     )
+     product[:quantity_per_size].split(", ").each do |s|
+       inv = Inventory.create(
+         size: s.split(": ")[0],
+         quantity: s.split(": ")[1],
+         product_id: sock.id
+       )
+     end
+   end
