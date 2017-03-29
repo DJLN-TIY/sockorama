@@ -8,9 +8,9 @@ class Cart < ApplicationRecord
 
   aasm column: :state do
     state :open, initial: true
-    state :complete
+    state :completed
     event :checkout do
-      transitions from: :open, to: :complete
+      transitions from: :open, to: :completed
     end
   end
   # Call cart.checkout to toggle cart status from open to complete. Call cart.checkout! to save the cart to the database.

@@ -1,12 +1,12 @@
 GET '/api/products'
 Returns JSON list of all products:
-  :id, :name, :sock_type, :color, :style, :price, :image, :description, :materials, :stock_photo
+  :id, :name, :sock_type, :color, :style, :price, :stock_photo, :description, :materials, :stock_photo
     - inventories
       :id, :size, :quantity
 
 GET '/api/products/:id'
 Returns JSON of a particular product:
-  :id, :name, :sock_type, :color, :style, :price, :image, :description, :materials, :stock_photo
+  :id, :name, :sock_type, :color, :style, :price, :stock_photo, :description, :materials, :stock_photo
     - inventories
       :id, :size, :quantity
 
@@ -22,7 +22,7 @@ GET '/api/inventories'
 Returns JSON list of all inventories:
   :id, :size, :quantity
     - product
-      :id, :name, :sock_type, :color, :style, :price, :image, :description, :materials, :stock_photo
+      :id, :name, :sock_type, :color, :style, :price, :stock_photo, :description, :materials, :stock_photo
 
 GET '/api/carts/:id'
 REQUIRES :cart_token
