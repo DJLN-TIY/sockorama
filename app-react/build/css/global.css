@@ -2,6 +2,10 @@ html, body {
 	height:100%;
 }
 
+* { 
+  box-sizing: border-box; 
+}
+
 .navbar {
     margin-bottom: 0px;
 }
@@ -65,6 +69,42 @@ p.hero-subtitle{
 .all-socks-header {
     text-align: center;
 }
+
+/*Cart Styling*/
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control {
+		width: 20%;
+		display: inline !important;
+	}
+  
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table#cart thead { display: none; }
+	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	table#cart tfoot td{display:block; }
+	table#cart tfoot td .btn{display:block;}
+}
+/*End Cart Styling*/
 
 /*Footer Styling*/
 footer {
@@ -180,10 +220,12 @@ fieldset[disabled] .btn-success.active {
   background-color: #18BC9C;
   border-color: #18BC9C;
 }
+
 .btn-success .badge {
   color: #18BC9C;
   background-color: white;
 }
+
 .btn-social {
   display: inline-block;
   height: 50px;
@@ -194,6 +236,7 @@ fieldset[disabled] .btn-success.active {
   font-size: 20px;
   line-height: 45px;
 }
+
 /*sign in button*/
 .margin {
   margin-top: 10px;
