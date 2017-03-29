@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (4.12.0)
+      concurrent-ruby (~> 1.0)
     actioncable (5.0.2)
       actionpack (= 5.0.2)
       nio4r (>= 1.2, < 3.0)
@@ -53,6 +55,7 @@ GEM
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
     case_transform (0.2)
+      activesupport
     cloudinary (1.6.0)
       aws_cf_signer
       rest-client
@@ -241,16 +244,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   active_model_serializers (~> 0.10.0)
   bcrypt (~> 3.1.7)
   byebug
-  carrierwave
+  carrierwave (~> 1.0)
   cloudinary
   coffee-rails (~> 4.2)
   factory_girl_rails
   figaro
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen (~> 3.0.5)
   mini_magick
   pg (~> 0.18)

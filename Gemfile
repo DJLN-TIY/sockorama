@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -30,20 +30,21 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'pry-rails'
-gem 'sendgrid-ruby'
-gem 'cloudinary'
-gem 'figaro'
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'factory_girl_rails'
+gem 'aasm'
 gem 'active_model_serializers', '~> 0.10.0'
-gem 'rack-cors', :require => 'rack/cors'
+gem 'bcrypt', '~> 3.1.7'
+gem 'carrierwave', '~> 1.0'
+gem 'cloudinary'
+gem 'factory_girl_rails'
 # gem 'faker'
-gem 'ransack'
+gem 'figaro'
+gem 'kaminari'
+gem 'mini_magick'
 gem 'pg_search'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'rails_admin', '1.1.0'
+gem 'ransack'
+gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -52,6 +53,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do

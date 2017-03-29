@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cart_items
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   scope :api do
     resources :inventories
