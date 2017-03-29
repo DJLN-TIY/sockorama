@@ -10,16 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327231523) do
+ActiveRecord::Schema.define(version: 20170329010933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "inventory_id"
+    t.integer  "quantity"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id", using: :btree
+    t.index ["inventory_id"], name: "index_cart_items_on_inventory_id", using: :btree
+  end
 
   create_table "carts", force: :cascade do |t|
     t.integer  "total"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "state"
+    t.string   "cart_token"
     t.index ["user_id"], name: "index_carts_on_user_id", using: :btree
   end
 
@@ -43,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170327231523) do
     t.string   "sock_type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "stock_photo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,10 +64,13 @@ ActiveRecord::Schema.define(version: 20170327231523) do
     t.string   "password_digest"
     t.string   "address"
     t.string   "token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "admin",           default: false
   end
 
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "inventories"
   add_foreign_key "carts", "users"
   add_foreign_key "inventories", "products"
 end

@@ -14,6 +14,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+    render json: @product
+  end
+
   def update
     @product = Product.find(:id)
     @product.update(product_params)
@@ -27,7 +32,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :sock_type, :color, :style, :price, :image, :materials, :description)
+    params.require(:product).permit(:name, :sock_type, :color, :style, :price, :image, :materials, :description, :stock_photo)
   end
 
 end

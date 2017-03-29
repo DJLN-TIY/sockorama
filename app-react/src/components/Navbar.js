@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router'
-
+import Signinmodal from './Signinmodal';
+import Signupmodal from './Signupmodal';
 
 class Navbar extends Component {
 
@@ -21,6 +22,8 @@ class Navbar extends Component {
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
+                            <li><Signinmodal /> </li>
+                            <li><Signupmodal /></li>
                             <li><a href="#"><span className="nav-links">About</span></a></li>
                             <li><a href="#"><span className="nav-links">Account</span></a></li>
                             <li><Link to="/cart"><span className="nav-links">Cart</span></Link></li>
