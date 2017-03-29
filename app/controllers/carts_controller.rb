@@ -53,6 +53,7 @@ class CartsController < ApplicationController
       description: "Order #{cart.id}",
       currency: 'usd'
     )
+    render status: 200
   end
 
   private
