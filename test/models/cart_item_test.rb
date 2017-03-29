@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class CartItemTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  context "associations" do
+    should belong_to :cart
+    should belong_to :inventory
+  end
+  
 end
