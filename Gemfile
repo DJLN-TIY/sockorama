@@ -54,6 +54,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # gem 'faker'
   gem 'pry-rails'
+  gem 'shoulda'
 end
 
 group :development do
