@@ -13,7 +13,6 @@ import Routes from './Routes';
 // window.apiHost = 'http://localhost:3001';
 window.apiHost = 'https://enigmatic-waters-89034.herokuapp.com'
 
-
 // Render root component
 ReactDOM.render(
     <Routes />,
