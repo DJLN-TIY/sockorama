@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
     post '/login' => 'sessions#create'
     delete "/logout" => 'session#destroy'
+
+    root 'products#index'
   end
 
 end
