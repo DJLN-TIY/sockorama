@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router'
 
 
 class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-default">
+            <nav className="navbar navbar-defualt">
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -22,7 +23,8 @@ class Navbar extends Component {
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#"><span className="nav-links">About</span></a></li>
                             <li><a href="#"><span className="nav-links">Account</span></a></li>
-                            <li><a href="#"><span className="nav-links">Cart</span></a></li>
+                            <li><Link to="/cart"><span className="nav-links">Cart</span></Link></li>
+                            
                         </ul>
                     </div>
                 </div>
