@@ -23,3 +23,11 @@ Returns JSON list of all inventories:
   :id, :size, :quantity
     - product
       :id, :name, :sock_type, :color, :style, :price, :image, :description, :materials, :stock_photo
+
+GET '/api/carts/:id'
+REQUIRES :cart_token
+Returns JSON of a particular cart:
+  :id, :total, :state,
+    - :cart_items
+      :id, :quantity, :inventory
+        - :size, :quantity
