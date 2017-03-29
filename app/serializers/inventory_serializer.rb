@@ -1,4 +1,5 @@
 class InventorySerializer < ActiveModel::Serializer
   attributes :id, :size, :quantity
-  has_one :product
+  belongs_to :product
+  has_many :cart_items
 end

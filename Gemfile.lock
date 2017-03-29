@@ -248,7 +248,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   bcrypt (~> 3.1.7)
   byebug
-  carrierwave
+  carrierwave (~> 1.0)
   cloudinary
   coffee-rails (~> 4.2)
   factory_girl_rails
@@ -276,7 +276,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.3.3p222
 
 BUNDLED WITH
    1.14.6
