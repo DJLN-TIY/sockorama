@@ -1,8 +1,8 @@
 RailsAdmin.config do |config|
 
   config.authorize_with do
-    authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      User.find_by(username: username).try(:authenticate, password).try(:admin?)
+    authenticate_or_request_with_http_basic('Site Message') do |email, password|
+      User.find_by(email: email).try(:authenticate, password).try(:admin?)
     end
   end
 
@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar true
 
   config.model 'User' do
-    object_label_method :username
+    object_label_method :email
     list do
       exclude_fields :password_digest, :token
     end
