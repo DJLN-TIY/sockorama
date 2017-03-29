@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moreinfo from './Moreinfo';
 
 
 class Socks extends Component {
@@ -20,7 +21,14 @@ class Socks extends Component {
                                 <h3>Feature Label</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
-                                    <a href="#" className="btn btn-primary">Add to cart</a> <a href="#" className="btn btn-default">More info</a>
+                                    <div className="row">
+                                        <div className="col-sm-3 col-sm-offset-1">
+                                            <a href="#" className="btn btn-primary">Add to Cart</a> 
+                                        </div>
+                                        <div className="col-sm-3 col-sm-offset-2">
+                                            <Moreinfo />
+                                        </div>
+                                    </div>
                                 </p>
                             </div>
                         </div>
