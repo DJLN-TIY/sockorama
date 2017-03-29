@@ -25,7 +25,7 @@ class CartsController < ApplicationController
   end
 
   def add_items
-    cart = Cart.find(params[:id])
+    cart = Cart.find_by(cart_token: params[:cart_token])
     cart.cart_items.new(
       inventory_id: params[:inventory_id],
       quantity: params[:quantity]
@@ -35,6 +35,24 @@ class CartsController < ApplicationController
     else
       render json: cart.cart_items.errors.full_messages
     end
+  end
+
+  def start_checkout
+    cart = Cart.find_by(cart_token: params[:cart_token])
+    total = cart.calculate_total
+    render json: { total: total }
+  end
+
+  def checkout
+    cart = Cart.find_by(cart_token: params[:cart_token])
+    total = cart.calculate_total
+    cart.adjust_quantity
+    charge = Stripe::Charge.create(
+      source: params[:stripeToken],
+      amount: total,
+      description: "Order #{cart.id}",
+      currency: 'usd'
+    )
   end
 
   private
