@@ -4,6 +4,9 @@ import Sock from './Sock';
 class Socks extends Component {
 
     render() {
+
+        let socks = this.props.socks.map((sock, key) => <Sock key={key} {...sock} />);
+
         return (
             <div>
                 <div className="row">
@@ -12,7 +15,7 @@ class Socks extends Component {
                     </div>
                 </div>
                 <div className="row text-center all-socks-row">
-                    <Sock />
+                    {socks}
                 </div>
             </div>
         )
