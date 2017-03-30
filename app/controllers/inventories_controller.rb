@@ -11,6 +11,11 @@ class InventoriesController < ApplicationController
     end
   end
 
+  def show
+    inventory = Inventory.find(params[:id])
+    render json: inventory
+  end
+
   def create
     product = Product.find(params[:id])
     inv = product.inventories.new(inventory_params)

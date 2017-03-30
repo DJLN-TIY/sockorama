@@ -43,7 +43,7 @@ class CartsController < ApplicationController
     render json: { total: total }
   end
 
-  def checkout
+  def finalize_checkout
     cart = Cart.find_by(cart_token: params[:cart_token])
     total = cart.calculate_total
     cart.adjust_quantity
@@ -53,6 +53,7 @@ class CartsController < ApplicationController
       description: "Order #{cart.id}",
       currency: 'usd'
     )
+    cart.checkout!
     render status: 200
   end
 
