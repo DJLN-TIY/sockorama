@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  # def static
+  #   render file: "public/index.html", status: 200
+  # end
+
   private
 
   def current_user

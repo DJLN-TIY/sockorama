@@ -16,5 +16,9 @@ Rails.application.routes.draw do
 
     root 'products#index'
   end
+  # Fallback route
+  # get '/:fjlkd(/:fjdklad)' => 'application#static'
 
 end
+
+# root 'application/static'
