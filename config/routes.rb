@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     resources :users
     resources :charges
     resources :cart_items
-
+    resources :charges
+    resources :cart_items
+    
     post '/login' => 'sessions#create'
     delete "/logout" => 'session#destroy'
     get '/checkout' => 'carts#start_checkout'

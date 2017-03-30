@@ -9,6 +9,7 @@ class Signinmodal extends Component {
   }
   render() {
     return (
+
     <div>
       <button type="button" className="btn btn-primary btn-lg" onClick={() => window.$('#myModal').modal('toggle')}>
         Launch demo modal

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Moreinfo from './Moreinfo';
 
 
 class Sock extends Component {
