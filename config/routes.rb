@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     delete "/logout" => 'session#destroy'
     get '/checkout' => 'carts#start_checkout'
-    post '/checkout' => 'carts#checkout'
+    post '/checkout' => 'carts#finalize_checkout'
 
     root 'products#index'
   end
