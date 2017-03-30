@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  # def static
+  #   render file: "public/index.html", status: 200
+  # end
+
   private
 
   def current_user
@@ -11,9 +15,12 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless current_user
-      flash[:warning] = 'You need to login, first.'
-      redirect_to :login
+      render status: 400
     end
+  end
+
+  def current_cart
+    @current_cart ||= Cart.find_by(cart_token: params[:cart_token]) if params[:cart_token]
   end
 
 end
