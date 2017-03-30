@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by(token: params[:token]) if params[:token]
   end
 
   def require_user
@@ -15,4 +15,5 @@ class ApplicationController < ActionController::Base
       redirect_to :login
     end
   end
+
 end

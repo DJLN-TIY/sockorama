@@ -2,8 +2,18 @@ class InventoriesController < ApplicationController
   # before_action :admin
 
   def index
-    @inventories = Inventory.all
-    render json: @inventories
+    if params[:q]
+      @q = Inventory.ransack(params[:q])
+      render json: @q.result
+    else
+      @inventories = Inventory.all
+      render json: @inventories
+    end
+  end
+
+  def show
+    inventory = Inventory.find(params[:id])
+    render json: inventory
   end
 
   def create
@@ -17,8 +27,7 @@ class InventoriesController < ApplicationController
   end
 
   def update
-    product = Product.find(params[:id])
-    inv = product.inventories.find_by(size: params[:size])
+    inv = Inventory.find(params[:id])
     inv.update(inventory_params)
     if inv.save
       render json: inv

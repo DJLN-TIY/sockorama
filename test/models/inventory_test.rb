@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class InventoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  context "associations" do
+    should belong_to :product
+    should have_many :cart_items
+  end
+  
 end
