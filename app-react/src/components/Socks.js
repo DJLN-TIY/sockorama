@@ -12,7 +12,7 @@ class Socks extends Component {
                     </div>
                 </div>
                 <div className="row text-center all-socks-row">
-                    <Sock index={key} />
+                    <Sock />
                 </div>
             </div>
         )
