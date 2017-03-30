@@ -1,8 +1,13 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
-    render json: @products
+    if params[:q]
+      @q = Product.ransack(params[:q])
+      render json: @q.result
+    else
+      @products = Product.all
+      render json: @products
+    end
   end
 
   def create
@@ -20,7 +25,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(:id)
+    @product = Product.find(params[:id])
     @product.update(product_params)
     if @product.save
       render json: @product
@@ -32,7 +37,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :sock_type, :color, :style, :price, :image, :materials, :description, :stock_photo)
+    params.permit(:name, :sock_type, :color, :style, :price, :image, :materials, :description, :stock_photo)
   end
 
 end
