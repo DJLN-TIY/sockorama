@@ -45,6 +45,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'rails_admin', '1.1.0'
 gem 'ransack'
 gem 'sendgrid-ruby'
+gem 'stripe'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

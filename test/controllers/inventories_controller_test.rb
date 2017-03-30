@@ -26,9 +26,8 @@ class InventoriesControllerTest < ActionDispatch::IntegrationTest
       quantity: "20"
     )
     assert_equal 1, Inventory.all.count
-    patch inventory_path(product.id),
+    patch inventory_path(inventory),
       params: {
-        id: product.id,
         size: "XL",
         quantity: "16"
       }

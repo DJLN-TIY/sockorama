@@ -26,12 +26,8 @@ class Navbar extends Component {
                             <li><Signupmodal /></li>
                             <li><a href="#"><span className="nav-links">About</span></a></li>
                             <li><a href="#"><span className="nav-links">Account</span></a></li>
-<<<<<<< HEAD:app-react/src/Navbar.js
-                            <li><span className="nav-links" onClick{()}>Cart</span></li>
-=======
+                            <li><span className="nav-links">Cart</span></li>
                             <li><Link to="/cart"><span className="nav-links">Cart</span></Link></li>
-                            
->>>>>>> 6ff20382a1fdc9a66a0e023eea5ad6403f7622ce:app-react/src/components/Navbar.js
                         </ul>
                     </div>
                 </div>

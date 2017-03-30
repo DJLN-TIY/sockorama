@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Moreinfo from './Moreinfo';
 
 
-class Footer extends Component {
+class Sock extends Component {
 
     render() {
         return (
@@ -11,9 +12,14 @@ class Footer extends Component {
                     <div className="caption">
                         <h3>Sock Label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" className="btn btn-primary">Add to cart</a> <a href="#" className="btn btn-default">More info</a>
-                        </p>
+                        <div className="row">
+                            <div className="col-sm-3 col-sm-offset-1">
+                                <a href="#" className="btn btn-primary">Add to cart</a>                         
+                            </div>
+                            <div className="col-sm-3 col-sm-offset-1">
+                                <Moreinfo index={this.props.index} category={this.props.category} />                           
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,7 +27,7 @@ class Footer extends Component {
     }
 }
 
-export default Footer;
+export default Sock;
 
 
 

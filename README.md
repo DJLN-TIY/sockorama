@@ -31,3 +31,14 @@ Returns JSON of a particular cart:
     - :cart_items
       :id, :quantity, :inventory
         - :size, :quantity
+
+GET '/api/checkout'
+Begins the checkout process
+REQUIRES :cart_token
+Returns JSON of the cart:
+  :total (in a hash)
+
+POST '/api/checkout'
+Finishes the checkout process, charges the customer through Stripe, adjusts stock quantities
+REQUIRES :cart_token, :stripeToken
+Returns status: 200
