@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :charges
     resources :cart_items
 
-
     post '/login' => 'sessions#create'
     delete "/logout" => 'session#destroy'
     get '/checkout' => 'carts#start_checkout'
@@ -18,5 +17,9 @@ Rails.application.routes.draw do
 
     root 'products#index'
   end
+  # Fallback route
+  # get '/:fjlkd(/:fjdklad)' => 'application#static'
 
 end
+
+# root 'application/static'
