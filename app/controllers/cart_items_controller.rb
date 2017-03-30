@@ -2,12 +2,14 @@ class CartItemsController < ApplicationController
 
   def create
     @cart = Cart.find(params[:id])
-    @cart.cart_items.create!(inventory_id)
+    item = @cart.cart_items.create!(inventory_id)
+    render json: item
   end
 
   # update cart item
   def update
-    @cart_item = CartItem.find(params[:id])
+    item = CartItem.find(params[:id])
+    if 
   end
 
   # delete cart item
