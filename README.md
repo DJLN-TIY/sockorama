@@ -36,7 +36,7 @@ GET '/api/checkout'
 Begins the checkout process
 REQUIRES :cart_token
 Returns JSON of the cart:
-  :total
+  :total (in a hash)
 
 POST '/api/checkout'
 Finishes the checkout process, charges the customer through Stripe, adjusts stock quantities
