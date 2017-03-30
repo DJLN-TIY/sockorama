@@ -13,7 +13,8 @@ class CartItemsController < ApplicationController
   # update cart item
   def update
     item = CartItem.find(params[:id])
-    if item
+    if item.update
+      
   end
 
   # delete cart item

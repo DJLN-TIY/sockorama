@@ -7,15 +7,15 @@ class CartsController < ApplicationController
 
   def create
     if current_user
-      cart = Cart.new(current_user.id)
+      @current_cart = Cart.new(current_user.id)
       if cart.save
-        render json: cart
+        render json: @current_cart
       else
-        render json: cart.errors.full_messages, status: 400
+        render json: @current_cart.errors.full_messages, status: 400
       end
     else
-      cart = Cart.create!
-      render json: cart
+      @current_cart = Cart.create!
+      render json: @current_cart
     end
   end
 
