@@ -10,7 +10,6 @@ class Sock extends Component {
                 <div className="thumbnail">
                     <img className="sock-image" src={this.props.image} alt="Sock image" />
                     <div className="caption">
-<<<<<<< HEAD
                         <h3>Sock Label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <div className="row">
@@ -21,14 +20,12 @@ class Sock extends Component {
                                 <Moreinfo index={this.props.index} category={this.props.category} />                           
                             </div>
                         </div>
-=======
                         <h3>{this.props.name}</h3>
                         <p>{this.props.description}</p>
                         <p>{this.props.price}</p>
                         <p>
                             <a href="#" className="btn btn-primary">Add to cart</a> <a href="#" className="btn btn-default">More info</a>
                         </p>
->>>>>>> 42020c42acd13e9d9d34f035399cd5139907283a
                     </div>
                 </div>
             </div>

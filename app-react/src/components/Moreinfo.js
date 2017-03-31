@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Moreinfo extends Component {
-
   render() {
     return (
         <div>

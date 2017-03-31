@@ -9,7 +9,6 @@ class Signinmodal extends Component {
   }
   render() {
     return (
-<<<<<<< HEAD
         <div>
       <button className="btn btn-primary margin" onClick={() => window.$('#myModal').modal('toggle')}>Sign In</button>
 
@@ -26,7 +25,6 @@ class Signinmodal extends Component {
 				</div>
 			</div>
 		  </div>
-=======
     <div>
       <button type="button" className="btn btn-primary btn-lg" onClick={() => window.$('#myModal').modal('toggle')}>
         Launch demo modal
@@ -47,7 +45,7 @@ class Signinmodal extends Component {
               <button type="button" className="btn btn-primary" onClick={() => this.setState({changeMade: true})}>Save changes</button>
             </div>
           </div>
->>>>>>> 42020c42acd13e9d9d34f035399cd5139907283a
+          </div>
         </div>
       </div>
     </div>
@@ -57,19 +55,3 @@ class Signinmodal extends Component {
 
 export default Signinmodal;
 
-      //   <div>
-      // <button classNameName="btn btn-primary margin" data-toggle="modal" data-target="#login-modal" >Sign In</button>
-
-      // <div classNameName="modal fade" id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    	//   <div classNameName="modal-dialog">
-			// 	<div classNameName="loginmodal-container">
-			// 		<h1>Login to Your Account</h1><br/>
-			// 	  <form>
-      //                   <input type="text" name="user" placeholder="Username"/>
-      //                   <input type="password" name="pass" placeholder="Password"/>
-      //                   <input type="submit" name="login" classNameName="login loginmodal-submit" value="Login"/>
-			// 	  </form>
-			// 	</div>
-			// </div>
-		  // </div>
-      //   </div>
