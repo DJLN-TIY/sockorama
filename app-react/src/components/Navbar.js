@@ -26,7 +26,6 @@ class Navbar extends Component {
                             <li><Signupmodal /></li>
                             <li><a href="#"><span className="nav-links">About</span></a></li>
                             <li><a href="#"><span className="nav-links">Account</span></a></li>
-                            <li><span className="nav-links">Cart</span></li>
                             <li><Link to="/cart"><span className="nav-links">Cart</span></Link></li>
                         </ul>
                     </div>
