@@ -38,10 +38,10 @@ class Signinmodal extends Component {
 }
 
 export default Signinmodal;
-
+      // 
       //   <div>
       // <button classNameName="btn btn-primary margin" data-toggle="modal" data-target="#login-modal" >Sign In</button>
-
+      //
       // <div classNameName="modal fade" id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	//   <div classNameName="modal-dialog">
 			// 	<div classNameName="loginmodal-container">
