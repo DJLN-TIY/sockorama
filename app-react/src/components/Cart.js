@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 class Cart extends Component {
@@ -8,6 +9,15 @@ class Cart extends Component {
         return (
             <div>
                 <Navbar />
+                <div className="jumbotron jumbotron-sm">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-12 col-lg-12">
+                                <h1 className="h1">Your Cart</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="cart-background">
                 <div className="container">
                     <table id="cart" className="table table-hover table-condensed">

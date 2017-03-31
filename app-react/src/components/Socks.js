@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Sock from './Sock';
+import SideBar from'./SideBar';
 
 class Socks extends Component {
 
@@ -10,13 +11,19 @@ class Socks extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col-lg-12">
-                        <h3 className="all-socks-header">All Socks</h3>
+                    <div className="col-md-2 filters">
+                    <div className="col-md-12 col-md-offset-3">
+                        <SideBar />
+                        </div>
                     </div>
-                </div>
-                <div className="row text-center all-socks-row">
+                    <div className="col-md-10">
+                        
+                        <div className="row text-center all-socks-row">
                     {socks}
                 </div>
+                    </div>
+                </div>
+                
             </div>
         )
     }

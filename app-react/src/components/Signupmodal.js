@@ -5,7 +5,7 @@ class Signup extends Component {
   render() {
     return (
         <div>
-      <button className="btn btn-info margin" onClick={() => window.$('#login-modal').modal('toggle')}>Sign Up</button>
+      <button className="btn btn-info margin nav-buttons" onClick={() => window.$('#login-modal').modal('toggle')}>Sign Up</button>
 
       <div className="modal fade" id="login-modal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	  <div className="modal-dialog">
