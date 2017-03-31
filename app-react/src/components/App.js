@@ -3,10 +3,8 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import Socks from './Socks';
 import Footer from './Footer';
-// import SideBar from './SideBar';
 
 class App extends Component {
-
    // Setup
     constructor(props) {
         // Call the React.Component constructor() method
@@ -14,50 +12,46 @@ class App extends Component {
         super(props)
 
         // Bind custom methods to this object context
-        this.getSocks = this.getProducts.bind(this)
-        // this.filterProducts = this.filterProducts.bind(this)
+        this.getSocks = this.getSocks.bind(this);
+        this.getSock = this.getSock.bind(this);
 
         // Initial state
         this.state = {
-            products: [],
-            filters: []
+            originalSocks: [],
+            socks: [],
+            sock: {},
         }
     }
-
-    // filterProducts(filters) {
-    //     // this.setState({filters: filters})
-    //     alert('Hello')
-    // }
 
     // React lifecycle methods
     componentWillMount() {
         // Before we mount the component onto the page, initiate API call
-        this.getProducts()
+        this.getSocks()
     }
 
     // API methods
-    getProducts() {
+    getSocks() {
         fetch(window.apiHost + '/api/products')
         // .then(window.internetConnectionCheck)
         .then(response => response.json())
+        .then(response => this.setState({socks: response, originalSocks: response}))
         // .then(response => console.log(response))
+    }
 
-        // Local state object
-        .then(response => this.setState({products: response}));
-        
+    getSock(index) {
+      this.setState({sock: this.state.socks[index]})
     }
 
   render() {
-    return (
-      <div>
-        <Navbar />
-        <Hero />
-        {/* <SideBar filterProducts={this.filterProducts} /> */}
-        <Socks />
-        <Footer />
-      </div>
-    );
-  }
+      return (
+        <div>
+          <Navbar />
+          <Hero />
+          <Socks socks={this.state.socks} />
+          <Footer />
+        </div>
+      );
+    }
 }
 
 export default App;
