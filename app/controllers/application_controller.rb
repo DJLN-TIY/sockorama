@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def current_cart
     return @cart if @cart
     if params[:cart_token]
-      @cart = Cart.find_by(token: params[:cart_token]
+      @cart = Cart.find_by(token: params[:cart_token])
     elsif current_user && current_user.cart
       @cart = current_user.cart
     elsif current_user
