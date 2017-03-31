@@ -15,6 +15,7 @@ import { Router, Route, browserHistory } from 'react-router'
 // Load page view components
 import App from './components/App'
 import Cart from './components/Cart'
+import Contact from './components/Contact'
 
 // Configure routes
 class Routes extends React.Component {
@@ -23,6 +24,7 @@ class Routes extends React.Component {
         
                 <Route path="/" component={App} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/contact" component={Contact} />
             </Router>
     }
 }
