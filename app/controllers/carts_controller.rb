@@ -1,57 +1,28 @@
 class CartsController < ApplicationController
 
   def show
-    cart = Cart.find(params[:id])
-    render json: cart
-  end
-
-  def create
-    if current_user
-      @current_cart = Cart.new(current_user.id)
-      if cart.save
-        render json: @current_cart
-      else
-        render json: @current_cart.errors.full_messages, status: 400
-      end
-    else
-      @current_cart = Cart.create!
-      render json: @current_cart
-    end
-  end
-
-  def add_items
-    cart = Cart.find_by(cart_token: params[:cart_token])
-    cart.cart_items.new(
-      inventory_id: params[:inventory_id],
-      quantity: params[:quantity]
-    )
-    if cart.save
-      render json: cart.cart_items
-    else
-      render json: cart.cart_items.errors.full_messages
-    end
+    render json: current_cart
   end
 
   def start_checkout
-    cart = Cart.find_by(cart_token: params[:cart_token])
-    total = cart.calculate_total
-    render json: { total: total }
+    cart = current_cart
+    cart.total = cart.calculate_total
+    render json: cart
   end
 
   def finalize_checkout
-    cart = Cart.find_by(cart_token: params[:cart_token])
-    total = cart.calculate_total
+    cart = current_cart
+    cart.total = cart.calculate_total
     cart.adjust_quantity
-    charge = Stripe::Charge.create(
+    Stripe::Charge.create(
       source: params[:stripeToken],
-      amount: total,
+      amount: cart.total,
       description: "Order #{cart.id}",
       currency: 'usd'
     )
     cart.checkout!
-    render status: 200
-  end
 
-  private
+    render cart, status: 200
+  end
 
 end

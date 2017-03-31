@@ -11,7 +11,7 @@ class Signinmodal extends Component {
         }
     }
 
-signin() {
+    signin() {
         if(this.state.email !== '' && this.state.password !== '') {
         
         fetch(window.apiHost + '/api/login', {
@@ -40,8 +40,7 @@ signin() {
 render() {
     return (
         <div>
-            <button className="btn btn-danger margin nav-buttons" onClick={() => window.$('#myModal').modal('toggle').signin}>Sign In</button>
-
+            <button className="btn btn-primary margin nav-buttons" onClick={() => window.$('#myModal').modal('toggle').signin}>Sign In</button>
             <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="loginmodal-container">
@@ -59,6 +58,5 @@ render() {
     );
   }
 }
-
 
 export default Signinmodal;

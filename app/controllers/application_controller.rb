@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
   helper_method :current_user
 
   # def static
@@ -20,8 +18,16 @@ class ApplicationController < ActionController::Base
   # end
 
   def current_cart
-    return current_user.cart if current_user
-    @current_cart ||= Cart.find_by(cart_token: params[:cart_token]) if params[:cart_token]
+    return @cart if @cart
+    if params[:cart_token]
+      @cart = Cart.find_by(token: params[:cart_token])
+    elsif current_user && current_user.cart
+      @cart = current_user.cart
+    elsif current_user
+      @cart = current_user.cart.create!
+    else
+      @cart = Cart.create!
+    end
   end
 
 end
